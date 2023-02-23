@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import Send from "./icons/Send";
 import Emoji from "./icons/Emoji";
-import loadable from "@loadable/component";
+// import loadable from "@loadable/component";
 // import EmojiPicker from "./EmojiPicker";
 
 // const Send = lazy(
@@ -18,9 +18,9 @@ const Picker = lazy(
 
 // LazyLoad using loadable component
 
-const PickLoadable = loadable(() => import("./EmojiPicker"), {
-  fallback: <p id="loading">Load...</p>,
-});
+// const PickLoadable = loadable(() => import("./EmojiPicker"), {
+//   fallback: <p id="loading">Load...</p>,
+// });
 const ChatInput = () => {
   const [pickerOpen, togglePicker] = React.useReducer((state) => !state, false);
 

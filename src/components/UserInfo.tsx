@@ -1,5 +1,5 @@
 import React from "react";
-import Horizontal from "./icons/Horizontal";
+import { Link } from "react-router-dom";
 
 const UserInfo = () => (
   <div className="user-info">
@@ -10,7 +10,10 @@ const UserInfo = () => (
         <span className="user-status">Online</span>
       </div>
     </div>
-    <Horizontal />
+    <nav className="nav">
+      <Link to="/overview">Home</Link>
+      <Link to="/settings">Settings</Link>
+    </nav>
   </div>
 );
 

@@ -4,6 +4,10 @@ body {
   background-color: #252430;
 }
 
+* > a {
+  text-decoration: none;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -17,9 +21,24 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upper {
+  grid-area: 1 / 1 / 2 / 6;
+}
+.middle {
+  grid-area: 2 / 1 / 5 / 6;
+}
+.bottom {
+  grid-area: 5 / 1 / 6 / 6;
+}
+
 /* User info */
 .user-info {
-  grid-area: 1 / 1 / 2 / 6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,6 +91,21 @@ body {
 
 .user-info svg {
   color: #5f6178;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s all ease-in-out;
+}
+
+.nav a:hover {
+  color: #3562f4;
 }
 
 /* Chat list */
@@ -148,4 +182,98 @@ body {
 
 .emoji-picker-react {
   box-shadow: none !important;
+}
+
+.gif-picker {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+}
+
+#loading {
+  background: #333144;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  border: #303139;
+  position: absolute;
+  padding: 5px;
+  bottom: 40px;
+  right: 20px;
+}
+
+.header {
+  grid-area: 1 / 1 / 2 / 6;
+  border-bottom: 1px solid #303139;
+  text-align: left;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+}
+
+.chatlist {
+  padding: 0;
+  text-decoration: none;
+}
+
+.chatlist li {
+  padding: 10px;
+  transition: 0.3s all ease-in-out;
+}
+
+.chatlist li .user-name {
+  font-weight: normal;
+}
+.chatlist li:hover {
+  background-color: #302f3a;
+}
+
+.settings-form {
+  grid-area: 2 / 1 / 5 / 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settings-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 11px;
+  align-items: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  padding: 10px;
+}
+
+.settings-form input {
+  background-color: #302f3a;
+  border: 1px solid #3a3b44;
+  box-shadow: none;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 12px;
+  width: 80vw;
+  margin-top: 5px;
+  color: white;
+}
+
+.button {
+  background-color: #3562f4;
+  border: none;
+  box-shadow: none;
+  padding: 10 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: white;
+  height: 50px;
+  width: 100px;
 }
