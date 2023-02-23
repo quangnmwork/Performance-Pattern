@@ -3,7 +3,7 @@ import Picker from "emoji-picker-react";
 
 const EmojiPicker = () => (
   <div className="emoji-picker">
-    <Picker />
+    <Picker lazyLoadEmojis={true} />
   </div>
 );
 
