@@ -1,38 +1,151 @@
+html,
+body {
+  margin: 0;
+  background-color: #252430;
+}
+
 .App {
+  font-family: sans-serif;
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 0);
+  grid-template-rows: 0.5fr repeat(3, 1fr) 0.5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* User info */
+.user-info {
+  grid-area: 1 / 1 / 2 / 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #303139;
+  padding: 0 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-details {
+  display: flex;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-avatar {
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 50px;
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://randomuser.me/api/portraits/men/86.jpg");
+}
+
+.user-name {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  font-weight: bold;
+}
+
+.user-status {
+  color: #5f6178;
+  font-weight: lighter;
+  font-size: 13px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.user-status::before {
+  content: "";
+  background-color: #3af;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin-right: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-info svg {
+  color: #5f6178;
+}
+
+/* Chat list */
+.chat-list {
+  overflow: scroll;
+  padding: 0 20px;
+  grid-area: 2 / 1 / 5 / 6;
+}
+
+.msg-container {
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 13px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.msg-container.right {
+  justify-content: flex-end;
+}
+
+.chat-msg {
+  margin: 1px 0;
+  padding: 10px 14px;
+  border-radius: 20px;
+  max-width: 75%;
+  text-align: left;
+}
+
+.msg-container.left .chat-msg {
+  background: #333144;
+  border-bottom-left-radius: 7px;
+}
+
+.msg-container.right .chat-msg {
+  background: #3562f4;
+  border-bottom-right-radius: 7px;
+}
+
+/* Input container */
+
+.chat-input-container {
+  grid-area: 5 / 1 / 6 / 6;
+  padding: 0 10px;
+  border-top: 1px solid #303139;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-input-container input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #fff;
+  font-weight: regular;
+  width: 100%;
+}
+
+.chat-input-container svg {
+  stroke-width: 2;
+  margin: 0 4px;
+  color: #5f6178;
+  cursor: pointer;
+}
+
+.emoji-picker {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+}
+
+.emoji-picker-react {
+  box-shadow: none !important;
 }
